@@ -1,0 +1,3 @@
+SELECT family.ID, family.FirstName, family.LastName, Sum(profit.Income) AS [Sum-Income], Sum(cost.AmountMoney) AS [Sum-AmountMoney]
+FROM profit INNER JOIN (cost INNER JOIN family ON cost.ID = family.ID) ON profit.ID = family.ID
+GROUP BY family.ID, family.FirstName, family.LastName;
